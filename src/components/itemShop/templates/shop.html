@@ -1,0 +1,46 @@
+<div class="shop" ng-controller="itemShopController">
+    <form role="form">
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Search..." ng-model="searchQuery" ng-change="search()" />
+            <i class="form-control-feedback glyphicon glyphicon-search"></i>
+        </div>
+    </form>
+    <div class="categories col-lg-2">
+        <div ng-repeat="branch in itemTree">
+            <h4 translate>{{ branch.header }}</h4>
+            <div ng-repeat="tag in branch.tags">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" ng-model="tagCheck" ng-change="changeFilter(tag, tagCheck)"><span translate>{{ tag }}</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item-display col-lg-10">
+        <div>
+            <div ng-show="(searchQuery === '' || searchQuery === undefined) && searchTagFilter.length === 0">
+                <div deckgrid class="deckgrid" source="allItems">
+                    <item image-url="assets/images/items/{{card.id}}.png" name="{{card.name}}" plaintext="{{card.plaintext}}" ng-click="mother.addItem(card.$index)"></item>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div ng-hide="(searchQuery === '' || searchQuery === undefined)">
+                <div deckgrid class="deckgrid" source="searchResults">
+                    <item image-url="assets/images/items/{{card.id}}.png" name="{{card.name}}" plaintext="{{card.plaintext}}" ng-click="mother.addItem(card.$index)"></item>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div ng-show="(searchQuery === '' || searchQuery === undefined) && searchTagFilter.length > 0">
+                <div deckgrid class="deckgrid" source="filterResults">
+                    <item image-url="assets/images/items/{{card.id}}.png" name="{{card.name}}" plaintext="{{card.plaintext}}" ng-click="mother.addItem(card.$index)"></item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

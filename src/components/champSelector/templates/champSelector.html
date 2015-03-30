@@ -1,0 +1,23 @@
+<div ng-controller="champSelectorController" class="champ-selector">
+    <form role="form">
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Search..." ng-model="searchQuery" ng-change="search()" />
+            <i class="form-control-feedback glyphicon glyphicon-search"></i>
+        </div>
+    </form>
+    <div class="champ-container">
+        <br>
+        <div ng-show="searchQuery === '' || searchQuery === undefined" ng-repeat="champion in allChampions">
+            <div ng-click="changeChampion(champion)" ng-class="{selected: ngDialogData.champion==champion}">
+                <champion-icon champion="champion"></champion-icon>
+            </div>
+
+        </div>
+
+        <div ng-hide="searchQuery === '' || searchQuery === undefined" ng-repeat="champion in searchResults">
+            <div ng-click="changeChampion(champion)">
+                <champion-icon champion="champion"></champion-icon>
+            </div>
+        </div>
+    </div>
+</div>

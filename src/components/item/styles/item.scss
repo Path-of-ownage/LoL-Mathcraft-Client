@@ -1,0 +1,51 @@
+@mixin item-transition($time) {
+    -webkit-transition: border $time ease-in-out;
+    -o-transition: border $time ease-in-out;
+    transition: border $time ease-in-out;
+}
+
+@mixin round-corners($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -khtml-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+item {
+    img {
+        border: 2px solid #c17427;
+        @include round-corners(6px);
+    }
+    .item-block {
+        position: relative;
+        float: left;
+        display: block;
+        padding: 4px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        @include item-transition(.2s);
+        overflow: hidden;
+        min-height: 78px;
+        min-width: 206;
+        margin: 4px;
+        .item-thumbnail {
+            position: relative;
+            float: left;
+        }
+        .item-info {
+            position: relative;
+            float: left;
+            width: 130px;
+            p {
+                padding: 3px 5px 3px 5px;
+                overflow: hidden;
+                font-size: 12px;
+                margin: 0px;
+            }
+            .description {
+            }
+        }
+    }
+}
