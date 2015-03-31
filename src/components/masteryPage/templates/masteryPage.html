@@ -1,1 +1,7 @@
-mastery page
+<div ng-repeat="masteryBranch in masteryTree">
+    <div ng-repeat="masteryRow in masteryBranch">
+        <div ng-repeat="mastery in masteryRow.masteryTreeItems">
+            <mastery-icon mastery="getMasteryFromId(mastery.masteryId)"></mastery-icon>
+        </div>
+    </div>
+</div>

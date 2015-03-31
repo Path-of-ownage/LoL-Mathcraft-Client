@@ -5,6 +5,7 @@ angular.module('mathCraft').directive('masteryIcon', function () {
         restrict: 'E',
         transclude: true,
         scope: {
+            mastery: '='
         },
         templateUrl: 'components/masteryIcon/templates/masteryIcon.html',
         link: function (scope, element, attrs, ctrl) {
