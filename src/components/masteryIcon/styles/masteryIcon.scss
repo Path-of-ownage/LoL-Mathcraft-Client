@@ -2,4 +2,29 @@
     float: left;
     position: relative;
     margin: 4px;
+    border: 1px solid #2ec622;
+    img {
+        @include round-corners(3px);
+    }
+    .rank {
+        position: absolute;
+        right: 4px;
+        bottom: -4px;
+        border-color: #6cdf0f;
+        color: #6cdf0f;
+        border: 1px solid #a1a2a2;
+        padding: 3px 5px 0 5px;
+        background-color: #262626;
+        font-size: 10px;
+        line-height: 10px;
+        z-index: 2;
+    }
+}
+
+.dummy-mastery-icon {
+    width: 57px;
+    height: 57px;
+    margin: 4px;
+    float: left;
+    position: relative;
 }

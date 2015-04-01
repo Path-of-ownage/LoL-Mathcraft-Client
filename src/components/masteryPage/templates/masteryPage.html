@@ -1,7 +1,8 @@
-<div ng-repeat="masteryBranch in masteryTree">
-    <div ng-repeat="masteryRow in masteryBranch">
+<div class="mastery-tree" ng-repeat="masteryBranch in masteryTree">
+    <div class="row" ng-repeat="masteryRow in masteryBranch">
         <div ng-repeat="mastery in masteryRow.masteryTreeItems">
-            <mastery-icon mastery="getMasteryFromId(mastery.masteryId)"></mastery-icon>
+            <dummy-mastery-icon ng-if="!mastery"></dummy-mastery-icon>
+            <mastery-icon ng-if="mastery" mastery="getMasteryFromId(mastery.masteryId)"></mastery-icon>
         </div>
     </div>
 </div>

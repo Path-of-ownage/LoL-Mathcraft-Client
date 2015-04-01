@@ -12,10 +12,6 @@
 }
 
 item {
-    img {
-        border: 2px solid #c17427;
-        @include round-corners(6px);
-    }
     .item-block {
         position: relative;
         float: left;
@@ -31,6 +27,10 @@ item {
         min-width: 206;
         margin: 4px;
         .item-thumbnail {
+            img {
+                border: 2px solid #c17427;
+                @include round-corners(6px);
+            }
             position: relative;
             float: left;
         }
@@ -44,8 +44,7 @@ item {
                 font-size: 12px;
                 margin: 0px;
             }
-            .description {
-            }
+            .description {}
         }
     }
 }
