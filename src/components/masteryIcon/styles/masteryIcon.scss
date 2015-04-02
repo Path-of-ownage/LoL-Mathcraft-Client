@@ -2,7 +2,8 @@
     float: left;
     position: relative;
     margin: 4px;
-    border: 1px solid #2ec622;
+    padding: 3px;
+    @include round-corners(5px);
     img {
         @include round-corners(3px);
     }
@@ -19,6 +20,14 @@
         line-height: 10px;
         z-index: 2;
     }
+}
+
+.not-max-rank {
+    border: 2px solid #3e8c00;
+}
+
+.max-rank {
+    border: 2px solid #e7ae00;
 }
 
 .dummy-mastery-icon {

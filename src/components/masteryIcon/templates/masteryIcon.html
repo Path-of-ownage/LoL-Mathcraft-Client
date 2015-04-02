@@ -1,4 +1,6 @@
-<a href class="thumbnail mastery-icon" ng-click="incrementRank()" ng-right-click="decrementRank()">
-    <img ng-src="assets/images/masteries/{{mastery.id}}.png" alt="{{mastery.description[0]}}" data-holder-rendered="true">
-    <div class="rank">{{rank.rank}} / {{mastery.ranks}}</div>
-</a>
+<div>
+    <a href class="mastery-icon" ng-class="{ 'max-rank': rank.rank === mastery.ranks, 'not-max-rank': rank.rank < mastery.ranks  }" ng-click="incrementRank()" ng-right-click="decrementRank()">
+        <img ng-src="assets/images/masteries/{{mastery.id}}.png" alt="{{mastery.description[0]}}" data-holder-rendered="true">
+        <div class="rank">{{rank.rank}} / {{mastery.ranks}}</div>
+    </a>
+</div>
