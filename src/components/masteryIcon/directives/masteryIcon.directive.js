@@ -6,7 +6,8 @@ angular.module('mathCraft').directive('masteryIcon', function () {
         transclude: true,
         scope: {
             mastery: '=',
-            rank: '='
+            rank: '=',
+            unusedPoints: '='
         },
         controller: function ($scope) {
             $scope.incrementRank = function () {
