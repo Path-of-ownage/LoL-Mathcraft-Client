@@ -2,7 +2,8 @@
     <div class="row" ng-repeat="masteryRow in masteryBranch">
         <div ng-repeat="mastery in masteryRow.masteryTreeItems">
             <dummy-mastery-icon ng-if="!mastery"></dummy-mastery-icon>
-            <mastery-icon ng-if="mastery" mastery="getMasteryFromId(mastery.masteryId)" rank="getMasteryRank(mastery.masteryId)"></mastery-icon>
+            <mastery-icon ng-if="mastery" mastery="getMasteryFromId(mastery.masteryId)" rank="getMasteryRank(mastery.masteryId)" unused-points="unusedPoints"></mastery-icon>
         </div>
     </div>
 </div>
+Points Remaining: {{ unusedPoints.points }}

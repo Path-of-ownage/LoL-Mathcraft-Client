@@ -3,6 +3,9 @@ angular.module('mathCraft').controller('masteryPageController', function ($scope
     'use strict';
 
     $scope.masteryRanks = {};
+    $scope.unusedPoints = {
+        points: 30
+    }
 
     masteryService.getAllMasteries().then(function (data) {
         $scope.masteries = data;

@@ -1,9 +1,16 @@
+@mixin grey-scale($percentage) {
+    filter: grayscale($percentage);
+    -webkit-filter: grayscale($percentage);
+    filter: gray;
+}
+
 .mastery-icon {
     float: left;
     position: relative;
     margin: 4px;
     padding: 3px;
     @include round-corners(5px);
+    @include grey-scale(100%);
     img {
         @include round-corners(3px);
     }
